@@ -1,0 +1,105 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local PhantomForcesWindow = Library:NewWindow("Pull a Sword")
+local KillingCheatss = PhantomForcesWindow:NewSection("Event")
+
+
+KillingCheatss:CreateToggle("Auto Click", function(coll)
+    getgenv().coll = coll
+    while getgenv().coll do
+        task.wait()
+        pcall(function()
+             
+  local args = {
+    [1] = "Click",
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage").2DEmitter.ClickEvent:FireServer(unpack(args))
+
+        end)
+    end
+end)
+
+KillingCheatss:CreateToggle("Auto Fight ON", function(coll)
+    getgenv().coll = coll
+    while getgenv().coll do
+        task.wait(0.7)
+        pcall(function()
+             
+  local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage").RemoveC:FireServer(unpack(args))
+
+        end)
+    end
+end)
+
+KillingCheatss:CreateToggle("Auto Fight OFF", function(coll)
+    getgenv().coll = coll
+    while getgenv().coll do
+        task.wait()
+        pcall(function()
+          
+local args = {
+    [1] = 0
+}
+
+game:GetService("ReplicatedStorage").RemoveC:FireServer(unpack(args)) 
+
+        end)
+    end
+end)
+
+
+KillingCheatss:CreateToggle("Auto Win cow", function(coll)
+    getgenv().coll = coll
+    while getgenv().coll do
+        task.wait()
+        pcall(function()
+             
+  local args = {
+    [1] = "10"
+}
+
+game:GetService("ReplicatedStorage").HALLOWEEN2024FOLDER.WinEvent:FireServer(unpack(args))
+
+        end)
+    end
+end)
+
+
+KillingCheatss:CreateToggle("Egg 2", function(coll)
+    getgenv().coll = coll
+    while getgenv().coll do
+        task.wait()
+        pcall(function()
+          
+local args = {
+    [1] = "Hall Egg2",
+    [2] = "Buy1"
+}
+
+game:GetService("ReplicatedStorage").GameClient.Events.RemoteFunction.BuyEgg:InvokeServer(unpack(args))
+
+        end)
+    end
+end)
+
+
+KillingCheatss:CreateToggle("Auto Collect Credits", function(coll)
+    
+    getgenv().coll = coll
+    while getgenv().coll do
+        task.wait(7)
+        pcall(function()
+          
+game:GetService("ReplicatedStorage").GetCreditsEvent:FireServer()
+
+        end)
+    end
+end)
+
+KillingCheatss:CreateButton("KaaluRam", function(coll)
+end)
