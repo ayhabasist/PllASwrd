@@ -1,12 +1,12 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
-local PhantomForcesWindow = Library:NewWindow("Pull a Sword")
-local KillingCheatss = PhantomForcesWindow:NewSection("Event")
+local PhantomForcesWindow = Library:NewWindow("Pull a Sword Event")
+local KillingCheatss = PhantomForcesWindow:NewSection("Auto Farm")
 
 
 KillingCheatss:CreateToggle("Auto Click", function(coll)
     getgenv().coll = coll
     while getgenv().coll do
-        task.wait()
+        task.wait(0.2)
         pcall(function()
              
   local args = {
@@ -14,7 +14,7 @@ KillingCheatss:CreateToggle("Auto Click", function(coll)
     [2] = true
 }
 
-game:GetService("ReplicatedStorage").2DEmitter.ClickEvent:FireServer(unpack(args))
+game:GetService("ReplicatedStorage").ClickEvent:FireServer(unpack(args))
 
         end)
     end
@@ -46,17 +46,17 @@ local args = {
     [1] = 0
 }
 
-game:GetService("ReplicatedStorage").RemoveC:FireServer(unpack(args)) 
+game:GetService("ReplicatedStorage").RemoveC:FireServer(unpack(args))
 
         end)
     end
 end)
 
 
-KillingCheatss:CreateToggle("Auto Win cow", function(coll)
+KillingCheatss:CreateToggle("Auto Win Cow", function(coll)
     getgenv().coll = coll
     while getgenv().coll do
-        task.wait()
+        task.wait(0.5)
         pcall(function()
              
   local args = {
@@ -70,10 +70,44 @@ game:GetService("ReplicatedStorage").HALLOWEEN2024FOLDER.WinEvent:FireServer(unp
 end)
 
 
-KillingCheatss:CreateToggle("Egg 2", function(coll)
+
+KillingCheatss:CreateToggle("Auto Collect Credits", function(coll)
+    
     getgenv().coll = coll
     while getgenv().coll do
-        task.wait()
+        task.wait(1)
+        pcall(function()
+          
+game:GetService("ReplicatedStorage").GetCreditsEvent:FireServer()
+
+        end)
+    end
+end)
+
+
+local KillingCheatss = PhantomForcesWindow:NewSection("Eggs")
+
+KillingCheatss:CreateToggle("Egg 250", function(coll)
+    getgenv().coll = coll
+    while getgenv().coll do
+        task.wait(0.5)
+        pcall(function()
+          
+local args = {
+    [1] = "Hall Egg1",
+    [2] = "Buy1"
+}
+
+game:GetService("ReplicatedStorage").GameClient.Events.RemoteFunction.BuyEgg:InvokeServer(unpack(args))
+
+        end)
+    end
+end)
+
+KillingCheatss:CreateToggle("Egg 3.5k", function(coll)
+    getgenv().coll = coll
+    while getgenv().coll do
+        task.wait(0.5)
         pcall(function()
           
 local args = {
@@ -87,19 +121,4 @@ game:GetService("ReplicatedStorage").GameClient.Events.RemoteFunction.BuyEgg:Inv
     end
 end)
 
-
-KillingCheatss:CreateToggle("Auto Collect Credits", function(coll)
-    
-    getgenv().coll = coll
-    while getgenv().coll do
-        task.wait(7)
-        pcall(function()
-          
-game:GetService("ReplicatedStorage").GetCreditsEvent:FireServer()
-
-        end)
-    end
-end)
-
-KillingCheatss:CreateButton("KaaluRam", function(coll)
-end)
+local KillingCheatss = PhantomForcesWindow:NewSection("KaaluRam")
